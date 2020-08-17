@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/page1Fragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.navigationfragment.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_page2Fragment"
+            app:destination="@id/page2Fragment"
+            app:enterAnim="@anim/push_up_in"
+            app:exitAnim="@anim/push_up_out"
+            app:popEnterAnim="@anim/push_down_in"
+            app:popExitAnim="@anim/push_down_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.navigationfragment.fragment.BlankFragment"
+        android:label="blank_fragment"
+        tools:layout="@layout/blank_fragment" >
+        <action
+            android:id="@+id/action_blankFragment_to_termsFragment"
+            app:destination="@id/termsFragment"
+            app:enterAnim="@anim/push_down_in"
+            app:exitAnim="@anim/push_down_out"
+            app:popEnterAnim="@anim/push_up_in"
+            app:popExitAnim="@anim/push_up_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/page1Fragment"
+        android:name="com.example.navigationfragment.fragment.Page1Fragment"
+        android:label="page1_fragment"
+        tools:layout="@layout/page1_fragment" >
+        <action
+            android:id="@+id/action_page1Fragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/push_down_in"
+            app:exitAnim="@anim/push_down_out"
+            app:popEnterAnim="@anim/push_up_in"
+            app:popExitAnim="@anim/push_up_out" />
+        <action
+            android:id="@+id/action_page1Fragment_to_termsFragment"
+            app:destination="@id/termsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/page2Fragment"
+        android:name="com.example.navigationfragment.fragment.Page2Fragment"
+        android:label="page2_fragment"
+        tools:layout="@layout/page2_fragment" >
+        <action
+            android:id="@+id/action_page2Fragment_to_blankFragment"
+            app:destination="@id/blankFragment"
+            app:enterAnim="@anim/push_down_in"
+            app:exitAnim="@anim/push_down_out"
+            app:popEnterAnim="@anim/push_up_in"
+            app:popExitAnim="@anim/push_up_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/termsFragment"
+        android:name="com.example.navigationfragment.fragment.TermsFragment"
+        android:label="terms_fragment"
+        tools:layout="@layout/terms_fragment" />
+</navigation>
